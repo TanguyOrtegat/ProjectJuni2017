@@ -1,0 +1,31 @@
+{
+    "quiz": {
+        "Cars": {
+            "name" : "cars",
+            "q1": {
+                "image": "",
+                "answer": "ferrari"
+            },
+            "q2": {
+                "image": "href:",
+                "answer": "Lotus"
+            }
+        },
+        "FastFood": {
+            "q1": {
+                "image": "href: ",
+                "answer": "Mc Donalds"
+            },
+            "q2": {
+                "image": "href: ",
+                "answer": "Subway"
+            }
+        },
+        "Mixed": {
+            "q1": {
+                "image": "href: ",
+                "answer": "ferrari"
+            }
+        }
+    }
+}

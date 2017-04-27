@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <!-- Project juni 2017   -->
+    <!-- Naam student     :    Tanguy Ortegat       -->
+    <!-- Studentennummer  :    R0637745      -->
+    <meta charset="utf-8">
+    <title>Logo Quiz game</title>
+    <meta name="description" content="Project juni">
+    <meta name="author" content="Tanguy Ortegat">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/ProjectTenguyOrtegat2017.css">
+    <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+
+
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        
+
+    </style>
+    <script>
+        "use strict";
+        var jqXhr = $.ajax({
+            url: "./json/Data.json",
+            method: "GET",
+            dataType: "json"
+        });
+        jqXhr.done(function(dataSerie) {
+            console.log('Wat is er in de Dataserie:', dataSerie);
+            //$('#questionPicture').attr("src", dataSerie.quiz.cars.q1.image);
+            $('#headerTitle').html(dataSerie.quiz.Cars.name);
+            //alert(dataSerie.quiz.Cars.name);
+        }).fail(function(xhr) {
+            alert('Er is een fout opgetreden bij het binnenhalen van het JSON bestand', xhr);
+        });
+
+    </script>
+    <script>
+        "use strict";
+        $(document).ready(function() {
+            $('#btnLogin').on('click', function() {
+                if ($("#txtUsername").val() === "test" && $("#txtPassword").val() === "test") {
+                    console.log("ingelogd");
+                    //window.location.href = location+ "#page2";
+                    //window.location.replace(location+ "#page2"); //doet hetzelfde als erboven
+                    document.location.href = '#page2'
+                } else {
+                    //alert("verkeerde login of paswoord");
+                    $('#fout').css('display', 'inline');
+                    $("#txtPassword").val("");
+                }
+            });
+            $(".txtLoginForm").keypress(function(e) {
+                if (e.keyCode == 13) $('#btnLogin').click();
+            });
+        });
+
+    </script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+
+<body>
+    <!-- Dit is de code voor de login pagina -->
+    <div data-role="page" id="loginPage">
+        <div data-role="header">
+            <h1> Login </h1>
+        </div>
+        <div data-role="content">
+            <fieldset>
+                <label id="login"> Username </label>
+                <input type="text" id="txtUsername" class="txtLoginForm" placeholder="Enter username" required>
+                <label id="paswoord"> Paswoord </label>
+                <input type="password" id="txtPassword" class="txtLoginForm" placeholder="Enter password" required>
+                <div id="fout"> Wrong username or password </div>
+                <input class="ui-button ui-widget ui-corner-all" type="submit" value="Login" id="btnLogin">
+                <!--<button class="ui-button ui-widget ui-corner-all" id="btnLogin">A button element</button>--><a href="#page2" data-transition="fade" data-role="button">naar pagina2</a>
+            <div class="g-recaptcha" data-sitekey="6Ld3EB8UAAAAADuFqB5axCqqOtEmTcREsEseTNJ-"></div></fieldset>
+        </div>
+        <div data-role="footer">
+            <p>&#9400; Tanguy Ortegat 2016-2017</p>
+        </div>
+    </div>
+    <!-- Dit is de code voor pagina 2, menu -->
+    <div data-role="page" id="page2">
+        <div data-role="header">
+            <h1>Thema</h1>
+        </div>
+        <div data-role="content">
+            <h1> Thema </h1>
+            <div class="ui-grid-b">
+                <div class="ui-block-a">blok 1</div>
+                <div class="ui-block-b">blok 2</div>
+                <div class="ui-block-c">blok 3</div>
+                <div class="ui-block-a">blok 4</div>
+                <div class="ui-block-b">blok 5</div>
+                <div class="ui-block-c">blok 6</div>
+            </div>
+        </div>
+        <div data-role="footer">
+            <p>&#9400; Tanguy Ortegat 2016-2017</p>
+        </div>
+    </div>
+    <!-- Dit is de code voor pagina 3, spel -->
+    <div data-role="page" id="page3">
+        <div data-role="header">
+            <h1>Thema</h1>
+        </div>
+        <div data-role="content">
+            <h1 id="headerTitle"></h1> <img id="questionPicture"> </div>
+        <div data-role="footer">
+            <p>&#9400; Tanguy Ortegat 2016-2017</p>
+        </div>
+    </div>
+</body>
+
+</html>
