@@ -1,3 +1,20 @@
+<?php
+if(isset($_POST['btnLogin'])){
+    $url = 'https//ww.google.com/recaptcha/api/siteverify';
+    $privatekey= "6Ld3EB8UAAAAAAWHQ6gIl_gmpBbQaEhevUL603BA";
+    $response = (file_get_contents($url."?secret=".$privatekey."&response="._POST['g-recoptcha-response']."&remoteip=".$_SERVER[REMOTE_ADDR]));
+    $data = json_decode($response);
+    
+    if(isset($data->success) AND $data->succes==true){
+        
+    }else{
+        header('Location: index.html?CaptchaFail=true')
+    }
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 
@@ -77,6 +94,9 @@
                 <label id="paswoord"> Paswoord </label>
                 <input type="password" id="txtPassword" class="txtLoginForm" placeholder="Enter password" required>
                 <div id="fout"> Wrong username or password </div>
+                <?php if(isset($_GET['CaptchaFail'])) ?>
+                <div id="formElement">Captcha failled. Please try again.</div>
+                <?php ?>
                 <input class="ui-button ui-widget ui-corner-all" type="submit" value="Login" id="btnLogin">
                 <!--<button class="ui-button ui-widget ui-corner-all" id="btnLogin">A button element</button>--><a href="#page2" data-transition="fade" data-role="button">naar pagina2</a>
             <div class="g-recaptcha" data-sitekey="6Ld3EB8UAAAAADuFqB5axCqqOtEmTcREsEseTNJ-"></div></form>
