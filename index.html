@@ -6,7 +6,7 @@ if(isset($_POST['btnLogin'])){
     $data = json_decode($response);
     
     if(isset($data->success) AND $data->succes==true){
-        
+        header('Location: index.html?CaptchaOk=true');
     }else{
         header('Location: index.html?CaptchaFail=true');
     }
@@ -95,7 +95,10 @@ if(isset($_POST['btnLogin'])){
                 <input type="password" id="txtPassword" class="txtLoginForm" placeholder="Enter password" required>
                 <div id="fout"> Wrong username or password </div>
                 <?php if(isset($_GET['CaptchaFail'])) ?>
-                <div id="formElement">Captcha failled. Please try again.</div>
+                <div class="formElement">Captcha failled. Please try again.</div>
+                <?php ?>
+                <?php if(isset($_GET['CaptchaOk'])) ?>
+                <div class="formElement">Captcha OK</div>
                 <?php ?>
                 <input class="ui-button ui-widget ui-corner-all" type="submit" value="Login" id="btnLogin">
                 <!--<button class="ui-button ui-widget ui-corner-all" id="btnLogin">A button element</button>--><a href="#page2" data-transition="fade" data-role="button">naar pagina2</a>
