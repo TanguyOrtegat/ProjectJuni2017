@@ -264,7 +264,10 @@
                     $('#btnCheckAnswer').click();
                 }
             });
-
+            $('#btnGoBack').on('click', function() {
+                document.location.href = '#page2';
+                location.reload();
+            });
 
         });
 
@@ -361,7 +364,7 @@
                 <div class="ui-block-a">
                     <input type="text" id="txtAnswer"> </div>
                 <div class="ui-block-b"><a data-role="button" data-rel="popup" id="btnCheckAnswer" href="#btnAnswer" data-position-to="window">Check answer</a></div>
-                <div class="ui-block-a"><a href="#page2" data-transition="fade" data-role="button" onclick="location.reload();">Go back to theme menu</a> </div>
+                <div class="ui-block-a"><a id="btnGoBack" data-transition="fade" data-role="button">Go back to theme menu</a> </div>
                 <div class="ui-block-b"><a data-role="button" data-rel="popup" id="btnShowAnswer" href="#btnAnswers" data-position-to="window">Show answer</a></div>
             </div>
             
