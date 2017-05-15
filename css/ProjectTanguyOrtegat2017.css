@@ -1,0 +1,50 @@
+#fout {
+    display: none;
+    color: red;
+}
+
+.ui-footer {
+    bottom: 0px;
+    height: 43px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+}
+
+.ui-content {
+    padding-right: 20%;
+    padding-left: 20%;
+    padding-top: 3%;
+    text-align: center;
+}
+
+#page2 {
+    text-align: center;
+}
+
+.iconLogo {
+    width: 50px;
+    height: 50px;
+}
+
+#questionPicture{
+    width: 25%;
+    height: 25%;
+}
+
+#wrongAnswer {
+    display: none;
+    color: red;
+}
+
+#correctAnswer {
+    display: none;
+    color: green;
+}
+
+#showAnswer{
+    text-align: center;
+    align-content: center;
+    font-weight: bold;
+    font-size: 200%;
+}

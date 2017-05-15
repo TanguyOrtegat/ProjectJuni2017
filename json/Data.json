@@ -1,30 +1,555 @@
 {
     "quiz": {
         "Cars": {
-            "name" : "cars",
+            "name" : "Cars",
             "q1": {
-                "image": "",
-                "answer": "ferrari"
+                "image": "./images/Cars/Ferrari.jpg",
+                "answer": "Ferrari"
             },
             "q2": {
-                "image": "href:",
-                "answer": "Lotus"
+                "image": "./images/Cars/BMW.png",
+                "answer": "BMW"
+            },
+            "q3": {
+                "image": "./images/Cars/Citroen.png",
+                "answer": "Citroen"
+            },
+            "q4": {
+                "image": "./images/Cars/Dacia.jpg",
+                "answer": "Dacia"
+            },
+            "q5": {
+                "image": "./images/Cars/Fiat.jpg",
+                "answer": "Fiat"
+            },
+            "q6": {
+                "image": "./images/Cars/Ford.png",
+                "answer": "Ford"
+            },
+            "q7": {
+                "image": "./images/Cars/Honda.gif",
+                "answer": "Honda"
+            },
+            "q8": {
+                "image": "./images/Cars/Horki.jpg",
+                "answer": "Horki"
+            },
+            "q9": {
+                "image": "./images/Cars/Hyundai.jpg",
+                "answer": "Hyundai"
+            },
+            "q10": {
+                "image": "./images/Cars/Lexus.jpeg",
+                "answer": "Lexus"
+            },
+            "q11": {
+                "image": "./images/Cars/Mercedes-Benz.jpg",
+                "answer": "Mercedes Benz"
+            },
+            "q12": {
+                "image": "./images/Cars/Mitsubishi.jpg",
+                "answer": "Mitsubishi"
+            },
+            "q13": {
+                "image": "./images/Cars/Nissan.jpg",
+                "answer": "Nissan"
+            },
+            "q14": {
+                "image": "./images/Cars/Renault.png",
+                "answer": "Renault"
+            },
+            "q15": {
+                "image": "./images/Cars/Skoda.png",
+                "answer": "Skoda"
+            },
+            "q16": {
+                "image": "./images/Cars/Toyota.png",
+                "answer": "Toyota"
+            },
+            "q17": {
+                "image": "./images/Cars/Volkswagen.png",
+                "answer": "Volkswagen"
+            },
+            "q18": {
+                "image": "./images/Cars/Yamaha.jpg",
+                "answer": "Yamaha"
+            },
+            "q19": {
+                "image": "./images/Cars/Audi.png",
+                "answer": "Audi"
+            },
+            "q20": {
+                "image": "./images/Cars/Dodge.jpg",
+                "answer": "Dodge"
             }
         },
         "FastFood": {
+            "name" : "Fast food",
             "q1": {
-                "image": "href: ",
-                "answer": "Mc Donalds"
+                "image": "./images/FastFood/BurgerKing.jpeg",
+                "answer": "Burger King"
             },
             "q2": {
-                "image": "href: ",
+                "image": "./images/FastFood/mcdonalds.png",
+                "answer": "Mc Donalds"
+            },
+            "q3": {
+                "image": "./images/FastFood/PizzaHut.jpeg",
+                "answer": "PizzaHut"
+            },
+            "q4": {
+                "image": "./images/FastFood/Subway.png",
                 "answer": "Subway"
             }
         },
-        "Mixed": {
+        "Banks": {
+            "name" : "Banks",
             "q1": {
-                "image": "href: ",
-                "answer": "ferrari"
+                "image": "./images/Banks/Argenta.png",
+                "answer": "Argenta"
+            },
+            "q2": {
+                "image": "./images/Banks/AXA.jpg",
+                "answer": "AXA"
+            },
+            "q3": {
+                "image": "./images/Banks/Belfius.jpg",
+                "answer": "Belgius"
+            },
+            "q4": {
+                "image": "./images/Banks/BNPParibas.png",
+                "answer": "BNPParibas"
+            },
+            "q5": {
+                "image": "./images/Banks/Crelan.png",
+                "answer": "Crelan"
+            },
+            "q6": {
+                "image": "./images/Banks/Dexia.png",
+                "answer": "Dexia"
+            },
+            "q7": {
+                "image": "./images/Banks/Ethias.png",
+                "answer": "Ethias"
+            },
+            "q8": {
+                "image": "./images/Banks/HSBC.png",
+                "answer": "HSBC"
+            },
+            "q9": {
+                "image": "./images/Banks/ING.jpg",
+                "answer": "ING"
+            },
+            "q10": {
+                "image": "./images/Banks/KBC.jpg",
+                "answer": "KBC"
+            },
+            "q11": {
+                "image": "./images/Banks/RecordBank.png",
+                "answer": "Record Bank"
+            },
+            "q12": {
+                "image": "./images/Banks/UBS.png",
+                "answer": "UBS"
+            },
+            "q13": {
+                "image": "./images/Banks/VDK.jpg",
+                "answer": "VDK"
+            }
+        },
+        "Sports": {
+            "name" : "Sports",
+            "q1": {
+                "image": "./images/Sports/Adidas.jpg",
+                "answer": "Adidas"
+            },
+            "q2": {
+                "image": "./images/Sports/Dunlop.jpg",
+                "answer": "Dunlop"
+            },
+            "q3": {
+                "image": "./images/Sports/Fila.png",
+                "answer": "Fila"
+            },
+            "q4": {
+                "image": "./images/Sports/kappa.png",
+                "answer": "kappa"
+            },
+            "q5": {
+                "image": "./images/Sports/Lonsdale.png",
+                "answer": "Lonsdale"
+            },
+            "q6": {
+                "image": "./images/Sports/Nike.png",
+                "answer": "Nike"
+            },
+            "q7": {
+                "image": "./images/Sports/GPATour.png",
+                "answer": "PGATour"
+            },
+            "q8": {
+                "image": "./images/Sports/Puma.gif",
+                "answer": "Puma"
+            },
+            "q9": {
+                "image": "./images/Sports/Reebok.jpg",
+                "answer": "Reebok"
+            },
+            "q10": {
+                "image": "./images/Sports/Slazenger.png",
+                "answer": "Slazenger"
+            },
+            "q11": {
+                "image": "./images/Sports/Umbro.png",
+                "answer": "Umbro"
+            },
+            "q12": {
+                "image": "./images/Sports/Wilson.png",
+                "answer": "Wilson"
+            },
+            "q13": {
+                "image": "./images/Sports/Yankees.png",
+                "answer": "Yankees"
+            }
+        },
+        "Drinks": {
+            "name" : "Drinks",
+            "q1": {
+                "image": "./images/Drinks/Bacardi.png",
+                "answer": "Bacardi"
+            },
+            "q2": {
+                "image": "./images/Drinks/CanadaDry.jpeg",
+                "answer": "Canada Dry"
+            },
+            "q3": {
+                "image": "./images/Drinks/CocaCola.png",
+                "answer": "Coca Cola"
+            },
+            "q4": {
+                "image": "./images/Drinks/Evian.jpeg",
+                "answer": "Evian"
+            },
+            "q5": {
+                "image": "./images/Drinks/Fanta.jpeg",
+                "answer": "fanta"
+            },
+            "q6": {
+                "image": "./images/Drinks/JackDaniels.png",
+                "answer": "Jack Daniels"
+            },
+            "q7": {
+                "image": "./images/Drinks/Jagermeister.png",
+                "answer": "Jagermeister"
+            },
+            "q8": {
+                "image": "./images/Drinks/JohnieWalker.png",
+                "answer": "Johnie Walker"
+            },
+            "q9": {
+                "image": "./images/Drinks/Nesquik.jpeg",
+                "answer": "Nesquik"
+            },
+            "q10": {
+                "image": "./images/Drinks/Orangina.jpeg",
+                "answer": "Orangina"
+            },
+            "q11": {
+                "image": "./images/Drinks/Pepsi.png",
+                "answer": "Pepsi"
+            },
+            "q12": {
+                "image": "./images/Drinks/RedBull.png",
+                "answer": "Red Bull"
+            },
+            "q13": {
+                "image": "./images/Drinks/Starbucks.jpg",
+                "answer": "Starbucks"
+            },
+            "q14": {
+                "image": "./images/Drinks/Tropicana.jpeg",
+                "answer": "Tropicana"
+            }
+        },
+        "MobilePhone": {
+            "name" : "Mobile phones",
+            "q1": {
+                "image": "./images/MobilePhone/Acer.jpg",
+                "answer": "Acer"
+            },
+            "q2": {
+                "image": "./images/MobilePhone/Apple.jpg",
+                "answer": "Apple"
+            },
+            "q3": {
+                "image": "./images/MobilePhone/Blackberry.jpg",
+                "answer": "Blackberry"
+            },
+            "q4": {
+                "image": "./images/MobilePhone/HTC.png",
+                "answer": "HTC"
+            },
+            "q5": {
+                "image": "./images/MobilePhone/Lenovo.png",
+                "answer": "Lenovo"
+            },
+            "q6": {
+                "image": "./images/MobilePhone/LG.png",
+                "answer": "LG"
+            },
+            "q7": {
+                "image": "./images/MobilePhone/Motorola.png",
+                "answer": "Motorola"
+            },
+            "q8": {
+                "image": "./images/MobilePhone/Nokia.jpg",
+                "answer": "Nokia"
+            },
+            "q9": {
+                "image": "./images/MobilePhone/Pixel.png",
+                "answer": "Pixel"
+            },
+            "q10": {
+                "image": "./images/MobilePhone/Sagem.jpg",
+                "answer": "Sagem"
+            }
+            ,
+            "q11": {
+                "image": "./images/MobilePhone/Samsung.jpg",
+                "answer": "Samsung"
+            }
+        },
+        "Mixed": {
+            "name" : "Mixed",
+            "q1": {
+                "image": "./images/mixed/Amazon.png",
+                "answer": "Amazon"
+            },
+            "q2": {
+                "image": "./images/mixed/Bosch.jpg",
+                "answer": "Bosch"
+            },
+            "q3": {
+                "image": "./images/mixed/Bp.jpg",
+                "answer": "Bp"
+            },
+            "q4": {
+                "image": "./images/mixed/Chrome.png",
+                "answer": "Chrome"
+            },
+            "q5": {
+                "image": "./images/mixed/Cisco.jpg",
+                "answer": "Cisco"
+            },
+            "q6": {
+                "image": "./images/mixed/Facebook.png",
+                "answer": "Facebook"
+            },
+            "q7": {
+                "image": "./images/mixed/HarleyDavidson.png",
+                "answer": "Harley Davidson"
+            },
+            "q8": {
+                "image": "./images/mixed/Hewlett-Packard.jpg",
+                "answer": "Hewlett Packard"
+            },
+            "q9": {
+                "image": "./images/mixed/Kinder.jpeg",
+                "answer": "Kinder"
+            },
+            "q10": {
+                "image": "./images/mixed/Lacoste.jpg",
+                "answer": "Lacoste"
+            },
+            "q11": {
+                "image": "./images/mixed/Levis.png",
+                "answer": "Levis"
+            },
+            "q12": {
+                "image": "./images/mixed/MasterCard.png",
+                "answer": "Mastercard"
+            },
+            "q13": {
+                "image": "./images/mixed/Microsoft.png",
+                "answer": "Microsoft"
+            },
+            "q14": {
+                "image": "./images/mixed/Samsonite.jpg",
+                "answer": "Samsonite"
+            },
+            "q15": {
+                "image": "./images/mixed/Shell.jpg",
+                "answer": "Shell"
+            },
+            "q16": {
+                "image": "./images/mixed/Skype.jpg",
+                "answer": "Skype"
+            },
+            "q17": {
+                "image": "./images/Mixed/TommyHilfiger.jpg",
+                "answer": "Tommy Hilfiger"
+            },
+            "q18": {
+                "image": "./images/mixed/Twitter.png",
+                "answer": "Twitter"
+            },
+            "q19": {
+                "image": "./images/mixed/Unicef.jpg",
+                "answer": "Unicef"
+            },
+            "q20": {
+                "image": "./images/mixed/Unilever.jpg",
+                "answer": "Unilever"
+            },
+            "q21": {
+                "image": "./images/mixed/Vodaphone.jpg",
+                "answer": "Vodafone"
+            },
+            "q22": {
+                "image": "./images/mixed/Wikipedia.png",
+                "answer": "Wikipedia"
+            },
+            "q23": {
+                "image": "./images/mixed/WWF.jpg",
+                "answer": "World Wide Fund"
+            }
+        },
+        "Food": {
+            "name" : "Food",
+            "q1": {
+                "image": "./images/Food/Activia.jpeg",
+                "answer": "Activia"
+            },
+            "q2": {
+                "image": "./images/Food/Cornetto.jpeg",
+                "answer": "Cornetto"
+            },
+            "q3": {
+                "image": "./images/Food/Danone.jpeg",
+                "answer": "Danone"
+            },
+            "q4": {
+                "image": "./images/Food/DelMonte.jpeg",
+                "answer": "DelMonte"
+            },
+            "q5": {
+                "image": "./images/Food/HaagenDazs.jpeg",
+                "answer": "Haagen Dazs"
+            },
+            "q6": {
+                "image": "./images/Food/Haribo.jpeg",
+                "answer": "Haribo"
+            },
+            "q7": {
+                "image": "./images/Food/Heinz.jpeg",
+                "answer": "Heinz"
+            },
+            "q8": {
+                "image": "./images/Food/Kitkat.jpeg",
+                "answer": "Kitkat"
+            },
+            "q9": {
+                "image": "./images/Food/Knorr.jpeg",
+                "answer": "Knorr"
+            },
+            "q10": {
+                "image": "./images/Food/LaVacheQuiRit.jpeg",
+                "answer": "La vache qui rit"
+            },
+            "q11": {
+                "image": "./images/Food/Nestle.png",
+                "answer": "Nestle"
+            },
+            "q12": {
+                "image": "./images/Food/Nutella.jpeg",
+                "answer": "Nutella"
+            },
+            "q13": {
+                "image": "./images/Food/Philadelphia.jpeg",
+                "answer": "Philadelphia"
+            },
+            "q14": {
+                "image": "./images/Food/Pringles.png",
+                "answer": "Pringles"
+            }
+        },
+        "Slogan": {
+            "name" : "Slogan",
+            "q1": {
+                "image": "./images/Slogan/Apple.png",
+                "answer": "Apple"
+            },
+            "q2": {
+                "image": "./images/Slogan/BMW.png",
+                "answer": "BMW"
+            },
+            "q2": {
+                "image": "./images/Slogan/BurgerKing.png",
+                "answer": "Burger King"
+            },
+            "q3": {
+                "image": "./images/Slogan/CocaCola.png",
+                "answer": "Coca Cola"
+            },
+            "q4": {
+                "image": "./images/Slogan/Ebay.png",
+                "answer": "Ebay"
+            },
+            "q5": {
+                "image": "./images/Slogan/Ford.png",
+                "answer": "Ford"
+            },
+            "q6": {
+                "image": "./images/Slogan/Frosties.png",
+                "answer": "Frosties"
+            },
+            "q7": {
+                "image": "./images/Slogan/Gilette.png",
+                "answer": "Gilette"
+            },
+            "q8": {
+                "image": "./images/Slogan/Google.png",
+                "answer": "Google"
+            },
+            "q9": {
+                "image": "./images/Slogan/KFC.png",
+                "answer": "KFC"
+            },
+            "q10": {
+                "image": "./images/Slogan/KitKat.png",
+                "answer": "KitKat"
+            },
+            "q11": {
+                "image": "./images/Slogan/Mars.png",
+                "answer": "Mars"
+            },
+            "q12": {
+                "image": "./images/Slogan/McDonalds.png",
+                "answer": "McDonalds"
+            },
+            "q13": {
+                "image": "./images/Slogan/Nike.png",
+                "answer": "Nike"
+            },
+            "q14": {
+                "image": "./images/Slogan/PepsiMax.png",
+                "answer": "Pepsi Max"
+            },
+            "q15": {
+                "image": "./images/Slogan/Pringles.png",
+                "answer": "Pringles"
+            },
+            "q16": {
+                "image": "./images/Slogan/Redbull.png",
+                "answer": "Redbull"
+            },
+            "q17": {
+                "image": "./images/Slogan/Subway.png",
+                "answer": "Subway"
+            },
+            "q18": {
+                "image": "./images/Slogan/Visa.png",
+                "answer": "Visa"
             }
         }
     }

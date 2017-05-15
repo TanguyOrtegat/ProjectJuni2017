@@ -1,22 +1,5 @@
-<?php
-if(isset($_POST['btnLogin'])){
-    $url = 'https//ww.google.com/recaptcha/api/siteverify';
-    $privatekey= "6Ld3EB8UAAAAAAWHQ6gIl_gmpBbQaEhevUL603BA";
-    $response = (file_get_contents($url."?secret=".$privatekey."&response="._POST['g-recoptcha-response']."&remoteip=".$_SERVER[REMOTE_ADDR]));
-    $data = json_decode($response);
-    
-    if(isset($data->success) AND $data->succes==true){
-        header('Location: index.html?CaptchaOk=true');
-    }else{
-        header('Location: index.html?CaptchaFail=true');
-    }
-}
-
-
-?>
-
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 
 <head>
     <!-- Project juni 2017   -->
@@ -27,58 +10,265 @@ if(isset($_POST['btnLogin'])){
     <meta name="description" content="Project juni">
     <meta name="author" content="Tanguy Ortegat">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <!-- css  -->
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-    <link rel="stylesheet" type="text/css" href="css/ProjectTenguyOrtegat2017.css">
-    
+    <link rel="stylesheet" type="text/css" href="css/ProjectTanguyOrtegat2017.css">
     <!-- scripts  -->
     <script src="Javascript/jquery-1.12.1.min.js"></script>
-    
     <script src="Javascript/jquery.mobile-1.4.5.min.js"></script>
-    
-    <style type="text/css">
-        
-    </style>
-    <script>
-        "use strict";
-        var jqXhr = $.ajax({
-            url: "./json/Data.json",
-            method: "GET",
-            dataType: "json"
-        });
-        jqXhr.done(function(dataSerie) {
-            console.log('Wat is er in de Dataserie:', dataSerie);
-            //$('#questionPicture').attr("src", dataSerie.quiz.cars.q1.image);
-            $('#headerTitle').html(dataSerie.quiz.Cars.name);
-            //alert(dataSerie.quiz.Cars.name);
-        }).fail(function(xhr) {
-            alert('Er is een fout opgetreden bij het binnenhalen van het JSON bestand', xhr);
-        });
-
-    </script>
     <script>
         "use strict";
         $(document).ready(function() {
             $('#btnLogin').on('click', function() {
-                if ($("#txtUsername").val() === "test" && $("#txtPassword").val() === "test") {
+                if ($('#txtUsername').val() === "test" && $('#txtPassword').val() === "test") {
                     console.log("ingelogd");
                     //window.location.href = location+ "#page2";
                     //window.location.replace(location+ "#page2"); //doet hetzelfde als erboven
-                    document.location.href = '#page2'
+                    document.location.href = '#page2';
                 } else {
                     //alert("verkeerde login of paswoord");
                     $('#fout').css('display', 'inline');
-                    $("#txtPassword").val("");
+                    $('#txtPassword').val("");
                 }
             });
-            $(".txtLoginForm").keypress(function(e) {
-                if (e.keyCode == 13) $('#btnLogin').click();
+            $('.txtLoginForm').keypress(function(e) {
+                if (e.keyCode === 13) {
+                    $('#btnLogin').click();
+                }
             });
+            var jqXhr = $.ajax({
+                url: "./json/Data.json",
+                method: "GET",
+                dataType: "json"
+            });
+            jqXhr.done(function(dataSerie) {
+                $('.btnTheme').on('click', function() {
+                    switch ($(this).attr('id')) {
+                        case 'btnCars':
+                            var RandomNumber = Math.floor((Math.random() * 20) + 1);
+                            $("#headerTitle").html(dataSerie.quiz.Cars.name);
+                            $("#questionPicture").attr("src", dataSerie.quiz.Cars["q" + RandomNumber].image);
+                            //$("#txtAnswer").attr("value", dataSerie.quiz.Cars["q" + RandomNumber].answer);
+                            console.log(dataSerie.quiz.Cars.name);
+                            $("#txtAnswer").val("");
+                            $('#correctAnswer').css('display', 'none');
+                            $('#wrongAnswer').css('display', 'none');
+                            $('#btnCheckAnswer').on('click', function() {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Cars["q" + RandomNumber].answer.toUpperCase()) {
+                                    $('#wrongAnswer').css('display', 'none');
+                                    $('#correctAnswer').css('display', 'inline');
+                                } else {
+                                    $('#correctAnswer').css('display', 'none');
+                                    $('#wrongAnswer').css('display', 'inline');
+                                    $('#txtPassword').val("");
+                                }
+                            });
+                            $('#btnShowAnswer').on('click', function() {
+                                $('#showAnswer').text(dataSerie.quiz.Cars["q" + RandomNumber].answer)
+                            });
+                            break;
+                        case 'btnFastfood':
+                            var RandomNumber = Math.floor((Math.random() * 4) + 1);
+                            $("#headerTitle").html(dataSerie.quiz.FastFood.name);
+                            $("#questionPicture").attr("src", dataSerie.quiz.FastFood["q" + RandomNumber].image);
+                            //$("#txtAnswer").attr("value", dataSerie.quiz.FastFood["q" + RandomNumber].answer);
+                            console.log(dataSerie.quiz.FastFood.name);
+                            $("#txtanswer").val("");
+                            $('#correctAnswer').css('display', 'none');
+                            $('#wrongAnswer').css('display', 'none');
+                            $('#btnCheckAnswer').on('click', function() {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.FastFood["q" + RandomNumber].answer.toUpperCase()) {
+                                    $('#wrongAnswer').css('display', 'none');
+                                    $('#correctAnswer').css('display', 'inline');
+                                } else {
+                                    $('#correctAnswer').css('display', 'none');
+                                    $('#wrongAnswer').css('display', 'inline');
+                                    $('#txtPassword').val("");
+                                }
+                            });
+                            $('#btnShowAnswer').on('click', function() {
+                                $('#showAnswer').text(dataSerie.quiz.FastFood["q" + RandomNumber].answer)
+                            });
+                            break;
+                        case 'btnBanks':
+                            var RandomNumber = Math.floor((Math.random() * 13) + 1);
+                            $("#headerTitle").html(dataSerie.quiz.Banks.name);
+                            $("#questionPicture").attr("src", dataSerie.quiz.Banks["q" + RandomNumber].image);
+                            //$("#txtAnswer").attr("value", dataSerie.quiz.Banks["q" + RandomNumber].answer);
+                            console.log(dataSerie.quiz.Banks.name);
+                            $("#txtanswer").val("");
+                            $('#correctAnswer').css('display', 'none');
+                            $('#wrongAnswer').css('display', 'none');
+                            $('#btnCheckAnswer').on('click', function() {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Banks["q" + RandomNumber].answer.toUpperCase()) {
+                                    $('#wrongAnswer').css('display', 'none');
+                                    $('#correctAnswer').css('display', 'inline');
+                                } else {
+                                    $('#correctAnswer').css('display', 'none');
+                                    $('#wrongAnswer').css('display', 'inline');
+                                    $('#txtPassword').val("");
+                                }
+                            });
+                            $('#btnShowAnswer').on('click', function() {
+                                $('#showAnswer').text(dataSerie.quiz.Banks["q" + RandomNumber].answer)
+                            });
+                            break;
+                        case 'btnFood':
+                            var RandomNumber = Math.floor((Math.random() * 14) + 1);
+                            $("#headerTitle").html(dataSerie.quiz.Food.name);
+                            $("#questionPicture").attr("src", dataSerie.quiz.Food["q" + RandomNumber].image);
+                            //$("#txtAnswer").attr("value", dataSerie.quiz.Food["q" + RandomNumber].answer);
+                            console.log(dataSerie.quiz.Food.name);
+                            $("#txtanswer").val("");
+                            $('#correctAnswer').css('display', 'none');
+                            $('#wrongAnswer').css('display', 'none');
+                            $('#btnCheckAnswer').on('click', function() {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Food["q" + RandomNumber].answer.toUpperCase()) {
+                                    $('#wrongAnswer').css('display', 'none');
+                                    $('#correctAnswer').css('display', 'inline');
+                                } else {
+                                    $('#correctAnswer').css('display', 'none');
+                                    $('#wrongAnswer').css('display', 'inline');
+                                    $('#txtPassword').val("");
+                                }
+                            });
+                            $('#btnShowAnswer').on('click', function() {
+                                $('#showAnswer').text(dataSerie.quiz.Food["q" + RandomNumber].answer)
+                            });
+                            break;
+                        case 'btnSlogan':
+                            var RandomNumber = Math.floor((Math.random() * 20) + 1);
+                            $("#headerTitle").html(dataSerie.quiz.Slogan.name);
+                            $("#questionPicture").attr("src", dataSerie.quiz.Slogan["q" + RandomNumber].image);
+                            //$("#txtAnswer").attr("value", dataSerie.quiz.Slogan["q" + RandomNumber].answer);
+                            console.log(dataSerie.quiz.Slogan.name);
+                            $("#txtanswer").val("");
+                            $('#correctAnswer').css('display', 'none');
+                            $('#wrongAnswer').css('display', 'none');
+                            $('#btnCheckAnswer').on('click', function() {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Slogan["q" + RandomNumber].answer.toUpperCase()) {
+                                    $('#correctAnswer').css('display', 'inline');
+                                    $('#wrongAnswer').css('display', 'none');
+                                } else {
+                                    $('#correctAnswer').css('display', 'none');
+                                    $('#wrongAnswer').css('display', 'inline');
+                                    $('#txtPassword').val("");
+                                }
+                            });
+                            $('#btnShowAnswer').on('click', function() {
+                                $('#showAnswer').text(dataSerie.quiz.Slogan["q" + RandomNumber].answer)
+                            });
+                            break;
+                        case 'btnMobilePhone':
+                            var RandomNumber = Math.floor((Math.random() * 11) + 1);
+                            $("#headerTitle").html(dataSerie.quiz.MobilePhone.name);
+                            $("#questionPicture").attr("src", dataSerie.quiz.MobilePhone["q" + RandomNumber].image);
+                            //$("#txtAnswer").attr("value", dataSerie.quiz.MobilePhone["q" + RandomNumber].answer);
+                            console.log(dataSerie.quiz.MobilePhone.name);
+                            $("#txtanswer").val("");
+                            $('#correctAnswer').css('display', 'none');
+                            $('#wrongAnswer').css('display', 'none');
+                            $('#btnCheckAnswer').on('click', function() {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.MobilePhone["q" + RandomNumber].answer.toUpperCase()) {
+                                    $('#wrongAnswer').css('display', 'none');
+                                    $('#correctAnswer').css('display', 'inline');
+                                } else {
+                                    $('#correctAnswer').css('display', 'none');
+                                    $('#wrongAnswer').css('display', 'inline');
+                                    $('#txtPassword').val("");
+                                }
+                            });
+                            $('#btnShowAnswer').on('click', function() {
+                                $('#showAnswer').text(dataSerie.quiz.MobilePhone["q" + RandomNumber].answer)
+                            });
+                            break;
+                        case 'btnSports':
+                            var RandomNumber = Math.floor((Math.random() * 13) + 1);
+                            $("#headerTitle").html(dataSerie.quiz.Sports.name);
+                            $("#questionPicture").attr("src", dataSerie.quiz.Sports["q" + RandomNumber].image);
+                            //$("#txtAnswer").attr("value", dataSerie.quiz.Sports["q" + RandomNumber].answer);
+                            console.log(dataSerie.quiz.Banks.name);
+                            $("#txtanswer").val("");
+                            $('#correctAnswer').css('display', 'none');
+                            $('#wrongAnswer').css('display', 'none');
+                            $('#btnCheckAnswer').on('click', function() {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Sports["q" + RandomNumber].answer.toUpperCase()) {
+                                    $('#wrongAnswer').css('display', 'none');
+                                    $('#correctAnswer').css('display', 'inline');
+                                } else {
+                                    $('#correctAnswer').css('display', 'none');
+                                    $('#wrongAnswer').css('display', 'inline');
+                                    $('#txtPassword').val("");
+                                }
+                            });
+                            $('#btnShowAnswer').on('click', function() {
+                                $('#showAnswer').text(dataSerie.quiz.Sports["q" + RandomNumber].answer)
+                            });
+                            break;
+                        case 'btnDrinks':
+                            var RandomNumber = Math.floor((Math.random() * 14) + 1);
+                            $("#headerTitle").html(dataSerie.quiz.Drinks.name);
+                            $("#questionPicture").attr("src", dataSerie.quiz.Drinks["q" + RandomNumber].image);
+                            //$("#txtAnswer").attr("value", dataSerie.quiz.Drinks["q" + RandomNumber].answer);
+                            console.log(dataSerie.quiz.Banks.name);
+                            $("#txtanswer").val("");
+                            $('#correctAnswer').css('display', 'none');
+                            $('#wrongAnswer').css('display', 'none');
+                            $('#btnCheckAnswer').on('click', function() {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Drinks["q" + RandomNumber].answer.toUpperCase()) {
+                                    $('#wrongAnswer').css('display', 'none');
+                                    $('#correctAnswer').css('display', 'inline');
+                                } else {
+                                    $('#correctAnswer').css('display', 'none');
+                                    $('#wrongAnswer').css('display', 'inline');
+                                    $('#txtPassword').val("");
+                                }
+                            });
+                            $('#btnShowAnswer').on('click', function() {
+                                $('#showAnswer').text(dataSerie.quiz.Drinks["q" + RandomNumber].answer)
+                            });
+                            break;
+                        case 'btnMixed':
+                            var RandomNumber = Math.floor((Math.random() * 23) + 1);
+                            $("#headerTitle").html(dataSerie.quiz.Mixed.name);
+                            $("#questionPicture").attr("src", dataSerie.quiz.Mixed["q" + RandomNumber].image);
+                            //$("#txtAnswer").attr("value", dataSerie.quiz.Mixed["q" + RandomNumber].answer);
+                            console.log(dataSerie.quiz.Banks.name);
+                            $("#txtanswer").val("");
+                            $('#correctAnswer').css('display', 'none');
+                            $('#wrongAnswer').css('display', 'none');
+                            $('#btnCheckAnswer').on('click', function() {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Mixed["q" + RandomNumber].answer.toUpperCase()) {
+                                    $('#wrongAnswer').css('display', 'none');
+                                    $('#correctAnswer').css('display', 'inline');
+                                } else {
+                                    $('#correctAnswer').css('display', 'none');
+                                    $('#wrongAnswer').css('display', 'inline');
+                                    $('#txtPassword').val("");
+                                }
+                            });
+                            $('#btnShowAnswer').on('click', function() {
+                                $('#showAnswer').text(dataSerie.quiz.Mixed["q" + RandomNumber].answer)
+                            });
+                            break;
+                    }
+                    document.location.href = '#page3';
+
+                });
+            }).fail(function(xhr) {
+                alert('Fout bij het binnenhalen van JSON bestand. Deze tab gaat daarom nu sluiten.');
+                window.close();
+            });
+            $('#txtAnswer').keypress(function(e) {
+                if (e.keyCode === 13) {
+                    $('#btnCheckAnswer').click();
+                }
+            });
+
+
         });
 
     </script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
@@ -88,21 +278,13 @@ if(isset($_POST['btnLogin'])){
             <h1> Login </h1>
         </div>
         <div data-role="content">
-            <form>
+            <fieldset>
                 <label id="login"> Username </label>
                 <input type="text" id="txtUsername" class="txtLoginForm" placeholder="Enter username" required>
                 <label id="paswoord"> Paswoord </label>
                 <input type="password" id="txtPassword" class="txtLoginForm" placeholder="Enter password" required>
                 <div id="fout"> Wrong username or password </div>
-                <?php if(isset($_GET['CaptchaFail'])) ?>
-                <div class="formElement">Captcha failled. Please try again.</div>
-                <?php ?>
-                <?php if(isset($_GET['CaptchaOk'])) ?>
-                <div class="formElement">Captcha OK</div>
-                <?php ?>
-                <input class="ui-button ui-widget ui-corner-all" type="submit" value="Login" id="btnLogin">
-                <!--<button class="ui-button ui-widget ui-corner-all" id="btnLogin">A button element</button>--><a href="#page2" data-transition="fade" data-role="button">naar pagina2</a>
-            <div class="g-recaptcha" data-sitekey="6Ld3EB8UAAAAADuFqB5axCqqOtEmTcREsEseTNJ-"></div></form>
+                <input class="ui-button ui-widget ui-corner-all" type="submit" value="Login" id="btnLogin"> </fieldset>
         </div>
         <div data-role="footer">
             <p>&#9400; Tanguy Ortegat 2016-2017</p>
@@ -111,17 +293,47 @@ if(isset($_POST['btnLogin'])){
     <!-- Dit is de code voor pagina 2, menu -->
     <div data-role="page" id="page2">
         <div data-role="header">
-            <h1>Thema</h1>
+            <h1>Theme</h1>
         </div>
         <div data-role="content">
-            <h1> Thema </h1>
+            <h1> Select your Theme </h1>
             <div class="ui-grid-b">
-                <div class="ui-block-a">blok 1</div>
-                <div class="ui-block-b">blok 2</div>
-                <div class="ui-block-c">blok 3</div>
-                <div class="ui-block-a">blok 4</div>
-                <div class="ui-block-b">blok 5</div>
-                <div class="ui-block-c">blok 6</div>
+                <div class="ui-block-a">
+                    <a data-transition="fade" data-role="button" class="btnTheme" id="btnCars"><img src="./images/Cars/Horki.jpg" alt="logo" class="iconLogo">
+                        <br>Cars </a>
+                </div>
+                <div class="ui-block-b">
+                    <a data-transition="fade" data-role="button" class="btnTheme" id="btnFastfood"><img src="./images/FastFood/mcdonalds.png" alt="logo" class="iconLogo">
+                        <br>Fastfood</a>
+                </div>
+                <div class="ui-block-c">
+                    <a data-transition="fade" data-role="button" class="btnTheme" id="btnBanks"><img src="./images/Banks/ING.jpg" alt="logo" class="iconLogo">
+                        <br>Banks</a>
+                </div>
+                <div class="ui-block-a">
+                    <a data-transition="fade" data-role="button" class="btnTheme" id="btnFood"><img src="./images/Food/Nestle.png" alt="logo" class="iconLogo">
+                        <br>Food</a>
+                </div>
+                <div class="ui-block-b">
+                    <a data-transition="fade" data-role="button" class="btnTheme" id="btnSlogan"><img src="./images/Slogan/Apple.png" alt="logo" class="iconLogo">
+                        <br>Slogan</a>
+                </div>
+                <div class="ui-block-c">
+                    <a data-transition="fade" data-role="button" class="btnTheme" id="btnMobilePhone"><img src="./images/MobilePhone/Apple.jpg" alt="logo" class="iconLogo">
+                        <br>Mobile phones</a>
+                </div>
+                <div class="ui-block-a">
+                    <a data-transition="fade" data-role="button" class="btnTheme" id="btnSports"><img src="./images/Sports/Adidas.jpg" alt="logo" width="50" height="50">
+                        <br>Sports</a>
+                </div>
+                <div class="ui-block-b">
+                    <a data-transition="fade" data-role="button" class="btnTheme" id="btnDrinks"><img src="./images/Drinks/Fanta.jpeg" alt="logo" class="iconLogo">
+                        <br>Drinks</a>
+                </div>
+                <div class="ui-block-c">
+                    <a data-transition="fade" data-role="button" class="btnTheme" id="btnMixed"><img src="./images/Mixed/Facebook.png" alt="logo" class="iconLogo">
+                        <br>Mixed</a>
+                </div>
             </div>
         </div>
         <div data-role="footer">
@@ -131,10 +343,29 @@ if(isset($_POST['btnLogin'])){
     <!-- Dit is de code voor pagina 3, spel -->
     <div data-role="page" id="page3">
         <div data-role="header">
-            <h1>Thema</h1>
+            <h1>Quiz</h1>
         </div>
         <div data-role="content">
-            <h1 id="headerTitle"></h1> <img id="questionPicture" alt="Image"> </div>
+            <h1 id="headerTitle">headerTitle</h1> <img id="questionPicture" alt="Image">
+            <br>
+            <br>
+            <div data-role="popup" id="btnAnswer" class="ui-content">
+                    <div id="wrongAnswer"> Wrong answer </div>
+                    <div id="correctAnswer"> Correct answer </div>
+                </div>
+            <div data-role="popup" id="btnAnswers" class="ui-content">
+                    <p id="showAnswer"></p>
+                </div>
+            <p> Enter your answer: </p>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <input type="text" id="txtAnswer"> </div>
+                <div class="ui-block-b"><a data-role="button" data-rel="popup" id="btnCheckAnswer" href="#btnAnswer" data-position-to="window">Check answer</a></div>
+                <div class="ui-block-a"><a href="#page2" data-transition="fade" data-role="button" onclick="location.reload();">Go back to theme menu</a> </div>
+                <div class="ui-block-b"><a data-role="button" data-rel="popup" id="btnShowAnswer" href="#btnAnswers" data-position-to="window">Show answer</a></div>
+            </div>
+            
+        </div>
         <div data-role="footer">
             <p>&#9400; Tanguy Ortegat 2016-2017</p>
         </div>
