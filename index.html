@@ -54,7 +54,7 @@
                             $('#correctAnswer').css('display', 'none');
                             $('#wrongAnswer').css('display', 'none');
                             $('#btnCheckAnswer').on('click', function() {
-                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Cars["q" + RandomNumber].answer.toUpperCase()) {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Cars["q" + RandomNumber].answer.toUpperCase()  || dataSerie.quiz.Cars["q" + RandomNumber].answer2.toUpperCase()) {
                                     $('#wrongAnswer').css('display', 'none');
                                     $('#correctAnswer').css('display', 'inline');
                                 } else {
@@ -64,7 +64,7 @@
                                 }
                             });
                             $('#btnShowAnswer').on('click', function() {
-                                $('#showAnswer').text(dataSerie.quiz.Cars["q" + RandomNumber].answer)
+                                document.getElementById("showAnswer").innerHTML = dataSerie.quiz.Cars["q" + RandomNumber].answer + "<br> --- <br>" + dataSerie.quiz.Cars["q" + RandomNumber].answer2
                             });
                             break;
                         case 'btnFastfood':
@@ -77,7 +77,7 @@
                             $('#correctAnswer').css('display', 'none');
                             $('#wrongAnswer').css('display', 'none');
                             $('#btnCheckAnswer').on('click', function() {
-                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.FastFood["q" + RandomNumber].answer.toUpperCase()) {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.FastFood["q" + RandomNumber].answer.toUpperCase()  || dataSerie.quiz.FastFood["q" + RandomNumber].answer2.toUpperCase()) {
                                     $('#wrongAnswer').css('display', 'none');
                                     $('#correctAnswer').css('display', 'inline');
                                 } else {
@@ -87,7 +87,7 @@
                                 }
                             });
                             $('#btnShowAnswer').on('click', function() {
-                                $('#showAnswer').text(dataSerie.quiz.FastFood["q" + RandomNumber].answer)
+                                document.getElementById("showAnswer").innerHTML = dataSerie.quiz.FastFood["q" + RandomNumber].answer + "<br> --- <br>" + dataSerie.quiz.FastFood["q" + RandomNumber].answer2
                             });
                             break;
                         case 'btnBanks':
@@ -100,7 +100,7 @@
                             $('#correctAnswer').css('display', 'none');
                             $('#wrongAnswer').css('display', 'none');
                             $('#btnCheckAnswer').on('click', function() {
-                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Banks["q" + RandomNumber].answer.toUpperCase()) {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Banks["q" + RandomNumber].answer.toUpperCase()  || dataSerie.quiz.Banks["q" + RandomNumber].answer2.toUpperCase()) {
                                     $('#wrongAnswer').css('display', 'none');
                                     $('#correctAnswer').css('display', 'inline');
                                 } else {
@@ -110,7 +110,7 @@
                                 }
                             });
                             $('#btnShowAnswer').on('click', function() {
-                                $('#showAnswer').text(dataSerie.quiz.Banks["q" + RandomNumber].answer)
+                                document.getElementById("showAnswer").innerHTML = dataSerie.quiz.Banks["q" + RandomNumber].answer + "<br> --- <br>" + dataSerie.quiz.Banks["q" + RandomNumber].answer2
                             });
                             break;
                         case 'btnFood':
@@ -123,7 +123,7 @@
                             $('#correctAnswer').css('display', 'none');
                             $('#wrongAnswer').css('display', 'none');
                             $('#btnCheckAnswer').on('click', function() {
-                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Food["q" + RandomNumber].answer.toUpperCase()) {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Food["q" + RandomNumber].answer.toUpperCase()  || dataSerie.quiz.Food["q" + RandomNumber].answer2.toUpperCase()) {
                                     $('#wrongAnswer').css('display', 'none');
                                     $('#correctAnswer').css('display', 'inline');
                                 } else {
@@ -133,7 +133,7 @@
                                 }
                             });
                             $('#btnShowAnswer').on('click', function() {
-                                $('#showAnswer').text(dataSerie.quiz.Food["q" + RandomNumber].answer)
+                                document.getElementById("showAnswer").innerHTML = dataSerie.quiz.Food["q" + RandomNumber].answer + "<br> --- <br>" + dataSerie.quiz.Food["q" + RandomNumber].answer2
                             });
                             break;
                         case 'btnSlogan':
@@ -146,7 +146,7 @@
                             $('#correctAnswer').css('display', 'none');
                             $('#wrongAnswer').css('display', 'none');
                             $('#btnCheckAnswer').on('click', function() {
-                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Slogan["q" + RandomNumber].answer.toUpperCase()) {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Slogan["q" + RandomNumber].answer.toUpperCase()  || dataSerie.quiz.Slogan["q" + RandomNumber].answer2.toUpperCase()) {
                                     $('#correctAnswer').css('display', 'inline');
                                     $('#wrongAnswer').css('display', 'none');
                                 } else {
@@ -156,7 +156,7 @@
                                 }
                             });
                             $('#btnShowAnswer').on('click', function() {
-                                $('#showAnswer').text(dataSerie.quiz.Slogan["q" + RandomNumber].answer)
+                                document.getElementById("showAnswer").innerHTML = dataSerie.quiz.Slogan["q" + RandomNumber].answer + "<br> --- <br>" + dataSerie.quiz.Slogan["q" + RandomNumber].answer2
                             });
                             break;
                         case 'btnMobilePhone':
@@ -169,7 +169,7 @@
                             $('#correctAnswer').css('display', 'none');
                             $('#wrongAnswer').css('display', 'none');
                             $('#btnCheckAnswer').on('click', function() {
-                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.MobilePhone["q" + RandomNumber].answer.toUpperCase()) {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.MobilePhone["q" + RandomNumber].answer.toUpperCase()  || dataSerie.quiz.MobilePhone["q" + RandomNumber].answer2.toUpperCase()) {
                                     $('#wrongAnswer').css('display', 'none');
                                     $('#correctAnswer').css('display', 'inline');
                                 } else {
@@ -179,7 +179,7 @@
                                 }
                             });
                             $('#btnShowAnswer').on('click', function() {
-                                $('#showAnswer').text(dataSerie.quiz.MobilePhone["q" + RandomNumber].answer)
+                                document.getElementById("showAnswer").innerHTML = dataSerie.quiz.MobilePhone["q" + RandomNumber].answer + "<br> --- <br>" + dataSerie.quiz.MobilePhone["q" + RandomNumber].answer2
                             });
                             break;
                         case 'btnSports':
@@ -192,7 +192,7 @@
                             $('#correctAnswer').css('display', 'none');
                             $('#wrongAnswer').css('display', 'none');
                             $('#btnCheckAnswer').on('click', function() {
-                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Sports["q" + RandomNumber].answer.toUpperCase()) {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Sports["q" + RandomNumber].answer.toUpperCase()  || dataSerie.quiz.Sports["q" + RandomNumber].answer2.toUpperCase()) {
                                     $('#wrongAnswer').css('display', 'none');
                                     $('#correctAnswer').css('display', 'inline');
                                 } else {
@@ -202,7 +202,7 @@
                                 }
                             });
                             $('#btnShowAnswer').on('click', function() {
-                                $('#showAnswer').text(dataSerie.quiz.Sports["q" + RandomNumber].answer)
+                                document.getElementById("showAnswer").innerHTML = dataSerie.quiz.Sports["q" + RandomNumber].answer + "<br> --- <br>" + dataSerie.quiz.Sports["q" + RandomNumber].answer2
                             });
                             break;
                         case 'btnDrinks':
@@ -215,7 +215,7 @@
                             $('#correctAnswer').css('display', 'none');
                             $('#wrongAnswer').css('display', 'none');
                             $('#btnCheckAnswer').on('click', function() {
-                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Drinks["q" + RandomNumber].answer.toUpperCase()) {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Drinks["q" + RandomNumber].answer.toUpperCase()  || dataSerie.quiz.Drinks["q" + RandomNumber].answer2.toUpperCase()) {
                                     $('#wrongAnswer').css('display', 'none');
                                     $('#correctAnswer').css('display', 'inline');
                                 } else {
@@ -225,11 +225,12 @@
                                 }
                             });
                             $('#btnShowAnswer').on('click', function() {
-                                $('#showAnswer').text(dataSerie.quiz.Drinks["q" + RandomNumber].answer)
+                                document.getElementById("showAnswer").innerHTML = dataSerie.quiz.Drinks["q" + RandomNumber].answer + "<br> --- <br>" + dataSerie.quiz.Drinks["q" + RandomNumber].answer2
                             });
                             break;
                         case 'btnMixed':
-                            var RandomNumber = Math.floor((Math.random() * 23) + 1);
+                            //var RandomNumber = Math.floor((Math.random() * 23) + 1);
+                            var RandomNumber = 8;
                             $("#headerTitle").html(dataSerie.quiz.Mixed.name);
                             $("#questionPicture").attr("src", dataSerie.quiz.Mixed["q" + RandomNumber].image);
                             //$("#txtAnswer").attr("value", dataSerie.quiz.Mixed["q" + RandomNumber].answer);
@@ -238,7 +239,7 @@
                             $('#correctAnswer').css('display', 'none');
                             $('#wrongAnswer').css('display', 'none');
                             $('#btnCheckAnswer').on('click', function() {
-                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Mixed["q" + RandomNumber].answer.toUpperCase()) {
+                                if ($('#txtAnswer').val().toUpperCase() === dataSerie.quiz.Mixed["q" + RandomNumber].answer.toUpperCase() || dataSerie.quiz.Mixed["q" + RandomNumber].answer2.toUpperCase()) {
                                     $('#wrongAnswer').css('display', 'none');
                                     $('#correctAnswer').css('display', 'inline');
                                 } else {
@@ -248,7 +249,7 @@
                                 }
                             });
                             $('#btnShowAnswer').on('click', function() {
-                                $('#showAnswer').text(dataSerie.quiz.Mixed["q" + RandomNumber].answer)
+                                document.getElementById("showAnswer").innerHTML = dataSerie.quiz.Mixed["q" + RandomNumber].answer + "<br> --- <br>" + dataSerie.quiz.Mixed["q" + RandomNumber].answer2
                             });
                             break;
                     }
