@@ -398,82 +398,82 @@
         "Mixed": {
             "name" : "Mixed",
             "q1": {
-                "image": "./images/mixed/Amazon.png",
+                "image": "./images/Mixed/Amazon.png",
                 "answer": "Amazon",
                 "answer2": ""
             },
             "q2": {
-                "image": "./images/mixed/Bosch.jpg",
+                "image": "./images/Mixed/Bosch.jpg",
                 "answer": "Bosch",
                 "answer2": ""
             },
             "q3": {
-                "image": "./images/mixed/Bp.jpg",
+                "image": "./images/Mixed/Bp.jpg",
                 "answer": "Bp",
                 "answer2": ""
             },
             "q4": {
-                "image": "./images/mixed/Chrome.png",
+                "image": "./images/Mixed/Chrome.png",
                 "answer": "Chrome",
                 "answer2": ""
             },
             "q5": {
-                "image": "./images/mixed/Cisco.jpg",
+                "image": "./images/Mixed/Cisco.jpg",
                 "answer": "Cisco",
                 "answer2": ""
             },
             "q6": {
-                "image": "./images/mixed/Facebook.png",
+                "image": "./images/Mixed/Facebook.png",
                 "answer": "Facebook",
                 "answer2": ""
             },
             "q7": {
-                "image": "./images/mixed/HarleyDavidson.png",
+                "image": "./images/Mixed/HarleyDavidson.png",
                 "answer": "Harley Davidson",
                 "answer2": ""
             },
             "q8": {
-                "image": "./images/mixed/HewlettPackard.jpg",
+                "image": "./images/Mixed/HewlettPackard.jpg",
                 "answer": "Hewlett Packard",
                 "answer2": "HP"
             },
             "q9": {
-                "image": "./images/mixed/Kinder.jpeg",
+                "image": "./images/Mixed/Kinder.jpeg",
                 "answer": "Kinder",
                 "answer2": ""
             },
             "q10": {
-                "image": "./images/mixed/Lacoste.jpg",
+                "image": "./images/Mixed/Lacoste.jpg",
                 "answer": "Lacoste",
                 "answer2": ""
             },
             "q11": {
-                "image": "./images/mixed/Levis.png",
+                "image": "./images/Mixed/Levis.png",
                 "answer": "Levis",
                 "answer2": "Levi s"
             },
             "q12": {
-                "image": "./images/mixed/MasterCard.png",
+                "image": "./images/Mixed/MasterCard.png",
                 "answer": "Mastercard",
                 "answer2": ""
             },
             "q13": {
-                "image": "./images/mixed/Microsoft.png",
+                "image": "./images/Mixed/Microsoft.png",
                 "answer": "Microsoft",
                 "answer2": ""
             },
             "q14": {
-                "image": "./images/mixed/Samsonite.jpg",
+                "image": "./images/Mixed/Samsonite.jpg",
                 "answer": "Samsonite",
                 "answer2": ""
             },
             "q15": {
-                "image": "./images/mixed/Shell.jpg",
+                "image": "./images/Mixed/Shell.jpg",
                 "answer": "Shell",
                 "answer2": ""
             },
             "q16": {
-                "image": "./images/mixed/Skype.jpg",
+                "image": "./images/Mixed/Skype.jpg",
                 "answer": "Skype",
                 "answer2": ""
             },
@@ -483,32 +483,32 @@
                 "answer2": ""
             },
             "q18": {
-                "image": "./images/mixed/Twitter.png",
+                "image": "./images/Mixed/Twitter.png",
                 "answer": "Twitter",
                 "answer2": ""
             },
             "q19": {
-                "image": "./images/mixed/Unicef.jpg",
+                "image": "./images/Mixed/Unicef.jpg",
                 "answer": "Unicef",
                 "answer2": ""
             },
             "q20": {
-                "image": "./images/mixed/Unilever.jpg",
+                "image": "./images/Mixed/Unilever.jpg",
                 "answer": "Unilever",
                 "answer2": ""
             },
             "q21": {
-                "image": "./images/mixed/Vodafone.jpg",
+                "image": "./images/Mixed/Vodafone.jpg",
                 "answer": "Vodafone",
                 "answer2": ""
             },
             "q22": {
-                "image": "./images/mixed/Wikipedia.png",
+                "image": "./images/Mixed/Wikipedia.png",
                 "answer": "Wikipedia",
                 "answer2": ""
             },
             "q23": {
-                "image": "./images/mixed/WWF.jpg",
+                "image": "./images/Mixed/WWF.jpg",
                 "answer": "World Wide Fund",
                 "answer2": "WWF"
             }
